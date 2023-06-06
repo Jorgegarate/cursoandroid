@@ -21,11 +21,7 @@ class DetailActivity : AppCompatActivity() {
             intent.getParcelableExtra(SUPER)!!
 
         }
-        println("hola ${superhero.toString()}")
-        binding.heroName.text = superhero.name
-        binding.alterEgo.text = superhero.alterEgo
-        binding.bio.text = superhero.bio
-        binding.power.rating = superhero.power
+        binding.superhero=superhero
 
     }
 }
