@@ -1,6 +1,7 @@
 package com.example.appheroe
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.appheroe.databinding.ActivityDetailBinding
@@ -23,12 +24,10 @@ class DetailActivity : AppCompatActivity() {
             intent.getParcelableExtra(SUPER)!!
 
         }
-        val bitmap = if (android.os.Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(BITMAP, Bitmap::class.java)!!
-        } else {
-            intent.getParcelableExtra(BITMAP)!!
+        val bitmapDirectory = intent.getStringExtra(BITMAP)
 
-        }
+        val bitmap = BitmapFactory.decodeFile(bitmapDirectory)
+
         binding.superhero=superhero
         binding.imageBitmap.setImageBitmap(bitmap)
 
